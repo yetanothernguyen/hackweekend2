@@ -1,15 +1,11 @@
 <div class="goalsinfo padded">
-	<p class="created">You've started this activity</p>
+	<p class="created">You've created this goal</p>
 	<h3><%= @goal.title %></h3>
 </div>
 
 
 <div class="postinvite padded">
 	<p class="addinvite">Invite your friends</p>
-	<a link="#" class="btn black arrow"><span class="twitter">Post to Twitter</span></a>
-	<% if current_user %>
-		<a href="#" class="btn black arrow"><span class='facebook'>Post to Facebook</span></a>
-	<% else %>
-		<a href="#" class="btn black arrow" id="facebook-login"><span class='facebook'>Post to Facebook</span></a>
-	<% end %>
+	<a link="#" class="btn black arrow"> <span class="twitter">Post to Twitter</span></a>
+	<a href="#" class="btn black arrow" id="<%= current_user ? 'facebook-share' : 'facebook-login' %>" ><span class='facebook'>Post to Facebook</span></a>
 </div>
