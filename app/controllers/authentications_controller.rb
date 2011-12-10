@@ -6,7 +6,7 @@ class AuthenticationsController < ApplicationController
     if authentication && authentication.user
       sign_in_and_redirect(authentication.user)
     else
-      user = User.create_from_omniauth(omniauth)
+      user = User.create_from_omniauth(omniauth, cookies[:token])
       session[:return_path] = request.env["HTTP_REFERER"]
       sign_in_and_redirect(user)
     end

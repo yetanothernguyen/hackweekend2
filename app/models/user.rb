@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   has_many :authentications
+  has_many :goals
 
-  def self.create_from_omniauth(omniauth)
-    Rails.logger.info omniauth.inspect
+  def self.create_from_omniauth(omniauth, token = nil)
     user = User.new
     user.email = omniauth["info"]["email"] rescue nil
     user.username ||= omniauth["info"]["nickname"] rescue nil
@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
     
     user.authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
     user.save
+
+    if token
+      goal = Goal.find_by_token(token)
+      goal.user = user
+      goal.save
+    end
     
     return user
   end
