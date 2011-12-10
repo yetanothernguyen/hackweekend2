@@ -66,6 +66,7 @@ ProjectJ::Application.routes.draw do
   end
   resources :invites, :only => [:new, :show]
   resources :users
+  resources :posts
   
   root :to => 'goals#new'
 end
