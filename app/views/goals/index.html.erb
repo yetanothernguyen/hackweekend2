@@ -4,7 +4,7 @@
   <li>
    <%= link_to user_fb_picture(goal.user, 'square', :class => 'avatar'), goal.user %>
      <div class="showtitle"><%= link_to goal.title, goal_path(goal) %></div>
-    <%= goal.location %>
+    <%= goal.city.name %>
     <%= goal.date.strftime("%m/%y") %>
   </li>
 <% end %>
