@@ -1,0 +1,41 @@
+$bor-color: #E2E2E2;
+$bor-color-2: #B3B3B3;
+$base-color: #2C4352;
+
+$gray-shade: #F4F4F4;
+@mixin rounded($radius: 10px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($x: 0, $y: 1px, $blur: 0px, $color: #999) {
+	box-shadow:$x $y $blur $color ;
+	-moz-box-shadow:$x $y $blur $color ;
+	-webkit-box-shadow:$x $y $blur $color ;
+}
+
+@mixin box-shadow-inset($x: 0, $y: 1px, $blur: 0px, $color: #999) {
+	box-shadow:$x $y $blur $color inset;
+	-moz-box-shadow:$x $y $blur $color inset;
+	-webkit-box-shadow:$x $y $blur $color inset;
+}
+
+@mixin box-shadow-multi($param, $param2){
+	box-shadow:$param,$param2 ;
+	-moz-box-shadow:$param,$param2;
+	-webkit-box-shadow:$param,$param2;
+}
+
+@mixin gradient($from:#222, $to:#000) {
+	background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background: -moz-linear-gradient(top,  $from,  $to);
+	//filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to');
+}
+
+@mixin animation($syntax) {
+  -webkit-animation: $syntax;
+     -moz-animation: $syntax;
+          animation: $syntax;
+}
+

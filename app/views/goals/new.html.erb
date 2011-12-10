@@ -1,14 +1,16 @@
-<h2>Create your goal</h2>
-<%= form_for resource do |form| %>
-  <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class="newgoal padded">
+  <%= form_for resource do |form| %>
+    <p>
+      <%= form.text_area :title, :placeholder => "What's your goal?" %>
+    </p>
+      <%= form.submit "Set goal", :class => "btn" %>
+    </p>
+  <% end %>
+</div>
+
+
+<div class="seegoal padded">
+
+  <%= link_to "Goals near you", "#", :class => "btn black" %>
+
+</div>
