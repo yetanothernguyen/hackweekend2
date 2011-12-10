@@ -1,3 +1,5 @@
+@import "mixin";
+
 *{
 	margin:0;
 	padding:0;
@@ -14,10 +16,52 @@ a{
 	color:#333;
 }
 
+ul,ol{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
 .padded{
 	padding:20px  0px;
 	&.bordered{
 		border-top:1px solid #ccc;
 	}
 }
+
+.fleft{float:left;}
+
+
+img.avatar{
+	width:33px;
+	height:33px;
+	display:block;
+	background:#333;
+	@include rounded(3px);
+}
+
+.tableview{
+	background:#fff;
+	margin:15px;
+	border:1px solid #ccc;
+	@include rounded(4px);
+	@include box-shadow(0,0,3px,rgba(0,0,0,0.15));
+	li{
+		border-bottom:1px solid #ccc;
+		padding:15px;
+		overflow:hidden;
+		&:last-child{
+			border-bottom:0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
 

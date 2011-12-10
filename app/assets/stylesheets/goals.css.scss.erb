@@ -76,16 +76,29 @@
 
  }
 
-
+.goalsinfo{
+	h3{
+		font-size:16px;
+		font-weight:normal;
+		margin:10px 15px;
+		border:1px solid #ccc;
+		@include rounded(3px);
+		padding:15px;
+	}
+}
 
  	p{
- 		margin:0 0 0 20px;
- 		padding:10px 0 10px 35px;
  		&.addinvite{
  			background:url(<%= asset_path('addinvite.png') %>) no-repeat center left;
+ 		margin:0 0 0 20px;
+ 		padding:10px 0 10px 35px;
+
  		}
  		&.created{
  			background:url(<%= asset_path('created.png') %>) no-repeat center left;
+ 		margin:0 0 0 20px;
+ 		padding:10px 0 10px 35px;
+
  		}
  	}
 
