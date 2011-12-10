@@ -10,7 +10,7 @@
   <% end %>
 </ul>
 <p>
-  <%= link_to "Manage membership", goal_memberships_path(resource) unless resource.memberships.pending.blank? %>
+  <%= link_to "Manage membership (#{resource.memberships.pending.size})", goal_memberships_path(resource) unless resource.memberships.pending.blank? %>
 </p>
 
 </div>
