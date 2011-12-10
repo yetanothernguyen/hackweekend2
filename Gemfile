@@ -12,12 +12,17 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'jquery-rails'
+gem 'inherited_resources'
+gem 'thin'
+
 group :production do
   gem 'pg'
 end
 
-gem 'jquery-rails'
-gem 'inherited_resources'
+group :development do
+  gem 'foreman'
+end
 
 group :development, :test do
   gem 'rspec-rails'
