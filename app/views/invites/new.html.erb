@@ -1,10 +1,18 @@
-<p>
-Here is your invite link:
-</p>
-<p>
-  <%= invite_url(:id => @token) %>
-</p>
+<div class="goalsinfo padded">
+You've created the goal
+</div>
 
+<div class="invitelink padded bordered">
+	<p>
+	Here is your invite link:
+	</p>
+
+	<p>
+	  <%= invite_url(:id => @token) %>
+	</p>
+</div>
+
+<div class="postinvite padded bordered">
 <button>Post to Twitter</button>
 
 <% if current_user %>

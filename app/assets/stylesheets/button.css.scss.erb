@@ -2,17 +2,23 @@
 
 	.btn{
 		border:0;
-		background:#51D8EB;
+		background-color:#51D8EB;
 		@include rounded(3px);
 		padding:12px 10px;
-		width:250px;
+		width:280px;
 		margin:10px auto;
 		font-size:18px;
 		font-family:bebas;
 		color:000;
 		text-decoration:none;
 		&.black{
-			background:#000;
+			background:#333;
 			color:#fff;
+		}
+		&.arrow{
+			background-image: url(<%= asset_path('arrow.png') %>);
+			background-repeat:no-repeat;
+			background-position: 275px center;
+
 		}
 	}
