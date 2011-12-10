@@ -1,4 +1,14 @@
 class MembershipsController < ApplicationController
+  
+  def join
+    membership = Membership.create :user_id => current_user.id, :goal_id => params[:goal_id], :status => "pending"
+    redirect_to goal_membership_path(:goal_id => params[:goal_id], :id => membership.id)
+  end
+
+  def show
+    @membership = Membership.find(params[:id])
+  end
+
   def index
     @memberships = Goal.find(params[:goal_id]).memberships.pending
   end

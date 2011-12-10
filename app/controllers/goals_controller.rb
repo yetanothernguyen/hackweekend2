@@ -11,11 +11,6 @@ class GoalsController < InheritedResources::Base
     @posts = resource.posts
     show!
   end
-  
-  def join
-    Membership.create :user_id => current_user, :goal_id => params[:id], :status => "pending"
-    redirect_to goal_path(params[:id])
-  end
 
   def index
     @current_city = params[:city]

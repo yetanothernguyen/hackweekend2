@@ -61,13 +61,14 @@ ProjectJ::Application.routes.draw do
   match '/signout' => 'authentications#signout'
   
   resources :goals, :path => 'activities' do
-    member do
-      get 'join'
-    end
-    resources :memberships, :only => [:index] do
+    
+    resources :memberships do
       member do
         get 'approve'
         get 'reject'
+      end
+      collection do
+        get 'join'
       end
     end
   end

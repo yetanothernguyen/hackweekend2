@@ -6,6 +6,7 @@
      <div class="showtitle"><%= link_to goal.title, goal_path(goal) %></div>
     <%= goal.city.name %>
     <%= goal.date.strftime("%m/%y") %>
+    <%= link_to "I'm interested", join_goal_memberships_path(goal) unless current_user && (goal.user == current_user || current_user.joined?(goal)) %>
   </li>
 <% end %>
 </ul>
