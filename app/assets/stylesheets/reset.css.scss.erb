@@ -53,6 +53,15 @@ img.avatar{
 		&:last-child{
 			border-bottom:0;
 		}
+		img{
+			margin:0 10px 0 0;
+		}
+		&.smallhead{
+			padding:5px;
+			background:#333;
+			color:#fff;
+
+		}
 	}
 }
 
@@ -61,6 +70,29 @@ img.avatar{
 	display:none;
 }
 
+.membership{
+	li{
+		p{
+			font-weight:bold;
+			font-size:14px;
+			margin: 10px 0 3px;
+			float:left;
+		}
+		.action{
+			float:right;
+			border:1px solid #ccc;
+			@include rounded(3px);
+			margin:2px 0 0;
+			a{
+				padding: 6px 3px;
+				display:inline-block;
+				&:first-child{
+					border-right:1px solid #ccc;
+				}
+			}
+		}
+	}
+}
 
 
 

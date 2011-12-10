@@ -1,9 +1,14 @@
-<ul>
+<ul class="tableview membership">
+<li class="smallhead">Manage membership</li>
 <% @memberships.each do |membership| %>
   <li>
-    <%= membership.user.username %>
+  	<%= link_to user_fb_picture(membership.user, 'square', :class => 'avatar'), user_path(membership.user), :class=>"fleft" %>
+
+    <p><%= membership.user.username %></p>
+    <div class="action">
     <%= link_to "Accept", approve_goal_membership_path(membership.goal_id, membership.id) %>
     <%= link_to "Reject", reject_goal_membership_path(membership.goal_id, membership.id) %>
+    </div>
   </li>
 <% end %>
 </ul>

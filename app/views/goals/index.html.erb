@@ -2,10 +2,10 @@
 <ul class="tableview">
 <% collection.recent.each do |goal| %>
   <li>
+   <%= link_to user_fb_picture(goal.user, 'square', :class => 'avatar'), goal.user %>
+     <div class="showtitle"><%= link_to goal.title, goal_path(goal) %></div>
     <%= goal.location %>
     <%= goal.date.strftime("%m/%y") %>
-    <%= link_to user_fb_picture(goal.user, 'square', :class => 'avatar'), goal.user %>
-    <%= link_to goal.title, goal_path(goal) %>
   </li>
 <% end %>
 </ul>
