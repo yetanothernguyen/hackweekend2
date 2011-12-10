@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :authentications
   has_many :goals
+  has_many :memberships
 
   def self.create_from_omniauth(omniauth, token = nil)
     user = User.new
