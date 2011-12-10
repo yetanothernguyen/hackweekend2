@@ -17,6 +17,7 @@ gem 'inherited_resources'
 gem 'thin'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'chronic'
 
 group :production do
   gem 'pg'

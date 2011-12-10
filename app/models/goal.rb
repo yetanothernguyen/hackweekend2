@@ -5,6 +5,7 @@ class Goal < ActiveRecord::Base
   scope :recent, order("created_at DESC")
   
   validates_presence_of :title
+  before_save :parse_date
   after_create :set_token
 
   protected
@@ -12,6 +13,14 @@ class Goal < ActiveRecord::Base
   def set_token
     self.token = Token.get_token(self.id)
     self.save
+  end
+
+  def parse_date
+    str = self.title
+    str.slice!(" at ")
+    str.slice!(" on ")
+    str.slice!(" in ")
+    self.date = Chronic.parse(str)
   end
 
 end
