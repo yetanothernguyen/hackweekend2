@@ -24,4 +24,8 @@ class User < ActiveRecord::Base
     
     return user
   end
+  
+  def joined?(goal)
+    goal.members.include?(self)
+  end
 end

@@ -59,7 +59,11 @@ ProjectJ::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   match '/signout' => 'authentications#signout'
   
-  resources :goals
+  resources :goals do
+    member do
+      get 'join'
+    end
+  end
   resources :invites, :only => [:new, :show]
   resources :users
   

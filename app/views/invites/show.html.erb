@@ -1,4 +1,5 @@
 You're invited to
 <p>
   <%= @goal.title %>
+  <%= link_to "Join", join_goal_path(@goal) if current_user.joined? %>
 </p>

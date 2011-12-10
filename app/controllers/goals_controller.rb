@@ -5,4 +5,9 @@ class GoalsController < InheritedResources::Base
   def create
     create! { new_invite_url(:token => resource.token) }
   end
+  
+  def join
+    Membership.create :user_id => current_user, :goal_id => params[:id], :status => "pending"
+    redirect_to goal_path(params[:id])
+  end
 end
