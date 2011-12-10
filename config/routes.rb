@@ -57,5 +57,7 @@ ProjectJ::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
 
   resources :goals
+  resources :invites, :only => [:new, :show]
+  
   root :to => 'goals#new'
 end
