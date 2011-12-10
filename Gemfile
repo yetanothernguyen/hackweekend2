@@ -15,6 +15,8 @@ end
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'thin'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :production do
   gem 'pg'

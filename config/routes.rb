@@ -56,6 +56,9 @@ ProjectJ::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
+  match '/auth/:provider/callback' => 'authentications#create'
+  match '/signout' => 'authentications#signout'
+  
   resources :goals
   resources :invites, :only => [:new, :show]
   

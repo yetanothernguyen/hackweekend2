@@ -6,4 +6,9 @@ Here is your invite link:
 </p>
 
 <button>Post to Twitter</button>
-<button>Post to Facebook</button>
+
+<% if current_user %>
+  <%= link_to "Post to Facebook", "#" %>
+<% else %>
+  <%= link_to "Login with Facebook", "#", :id => "facebook-login" %>
+<% end %>
