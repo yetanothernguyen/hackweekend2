@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  $("#facebook-post").click(function() {
+  $("#facebook-share").click(function() {
     FB.ui(
       {
        method: 'feed',
@@ -21,11 +21,18 @@ $(document).ready(function() {
       },
       function(response) {
         if (response && response.post_id) {
-          alert('Post was published.');
+          //alert('Post was published.');
         } else {
-          alert('Post was not published.');
+          //alert('Post was not published.');
         }
       }
     );
+  });
+
+  $('#facebook-login').click(function() {
+    FB.login(function(response) {
+      if(response.authResponse) 
+        window.location = '/auth/facebook/callback';
+    }, {scope:'email'});
   });
 });

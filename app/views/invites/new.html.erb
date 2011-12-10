@@ -8,18 +8,4 @@ Goal title
 <p class="addinvite">Share with your friedns</p>
 <a link="#" class="btn black arrow"> <span class="twitter">Post to Twitter</span></a>
 
-<% if current_user %>
-	<a href="#" class="btn black arrow" id="facebook-share"><span class='facebook'>Post to Facebook</span></a>
-<% else %>
-  <%= link_to "Login with Facebook", "#", :id => "facebook-login" %>
-<% end %>
-
-<script type="text/javascript">
-  $('#facebook-login').click(function(){
-    FB.login(function(response){
-      console.debug("fb callback");
-      console.debug(response);
-      if(response.authResponse) window.location = '/auth/facebook/callback';
-    }, {scope:'email, offline_access'});
-  });
-</script>
+<a href="#" class="btn black arrow" id="<%= current_user ? 'facebook-share' : 'facebook-login' %>"><span class='facebook'>Post to Facebook</span></a>
