@@ -3,14 +3,15 @@
   <%= resource.title %>
   <%= link_to user_fb_picture(resource.user, 'square', :class => 'avatar'), user_path(resource.user) %>
 </p>
-<%= link_to "Join", join_goal_path(resource) unless current_user.joined?(resource) %>
 <ul class="members">
   <% resource.members.each do |user| %>
     <li><%= link_to user_fb_picture(user, 'square', :class => 'avatar'), user_path(user) %></li>
   <% end %>
 </ul>
-<p>
-  <%= link_to "Manage membership (#{resource.memberships.pending.size})", goal_memberships_path(resource) unless resource.memberships.pending.blank? %>
+<p class="request">
+  <%= link_to "#{resource.memberships.pending.size}", goal_memberships_path(resource) unless resource.memberships.pending.blank? %>
+  <%= link_to "Join", join_goal_path(resource) unless current_user.joined?(resource) %>
+
 </p>
 
 </div>

@@ -2,6 +2,7 @@
 
 .goaltop{
 	background:#51D8EB;
+	position:relative;
 	.title{
 		font-family: museo;
 		font-size: 17px;
@@ -21,7 +22,7 @@
 			overflow:hidden;
 		li{
 			float:left;
-			margin:0 4px 0 0;
+			margin:0 4px 5px 0;
 			&:last-child{
 				margin:0;
 			}
@@ -74,4 +75,22 @@
     cursor:pointer;
     @include rounded(3px);
     @include gradient(#444,#222);
+}
+
+.request{
+	a{
+		ext-decoration:none;
+		right:10px;
+		@include rounded(20px);
+		background:#3595A3;
+		bottom:40px;
+		position:absolute;
+		color:#333;
+		padding:7px 10px;
+		display:block;
+		text-decoration:none;
+		&:first-child{
+			right:60px;
+		}
+	}
 }
