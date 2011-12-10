@@ -1,27 +1,29 @@
 <div class="goalsinfo padded">
-You've created the goal
+<p class="created">You've created this goal</p>
+Goal title
 </div>
 
-<div class="invitelink padded bordered">
-	<p>
-	Here is your invite link:
-	</p>
-
-	<p>
-	  <%= invite_url(:id => @token) %>
-	</p>
-</div>
 
 <div class="postinvite padded bordered">
-<button>Post to Twitter</button>
-<<<<<<< HEAD
+<p class="addinvite">Share with your friedns</p>
+<a link="#" class="btn black arrow"> <span class="twitter">Post to Twitter</span></a>
 
 <% if current_user %>
-  <%= link_to "Post to Facebook", "#" %>
+<<<<<<< HEAD
+	<a href="#" class="btn black arrow" id="facebook-share"><span class='facebook'>Post to Facebook</span></a>
+=======
+  <%= link_to "Post to Facebook", "#", :id => "facebook-post" %>
+>>>>>>> Post to facebook
 <% else %>
   <%= link_to "Login with Facebook", "#", :id => "facebook-login" %>
 <% end %>
-=======
-<button>Post to Facebook</button>
-</div>
->>>>>>> more design stuff
+
+<script type="text/javascript">
+  $('#facebook-login').click(function(){
+    FB.login(function(response){
+      console.debug("fb callback");
+      console.debug(response);
+      if(response.authResponse) window.location = '/auth/facebook/callback';
+    }, {scope:'email, offline_access'});
+  });
+</script>
