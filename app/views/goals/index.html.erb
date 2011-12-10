@@ -1,6 +1,6 @@
-<h3>Latest Activities</h3>
+<h3>Activities near you</h3>
 <ul class="tableview">
-<% collection.recent.each do |goal| %>
+<% @goals.each do |goal| %>
   <li>
    <%= link_to user_fb_picture(goal.user, 'square', :class => 'avatar'), goal.user %>
      <div class="showtitle"><%= link_to goal.title, goal_path(goal) %></div>

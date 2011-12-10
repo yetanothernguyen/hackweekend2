@@ -9,16 +9,12 @@
 
   <div class="location">
   	<div class="locationwrap">
-  	<span class="current"><%= form.text_field :location, :placeholder => "Where?", :id => 'location-text' %>
-</span>
-	<div class="droplocation hide">
-		<select>
-		  <option value="volvo">Volvo</option>
-		  <option value="saab">Saab</option>
-		  <option value="mercedes">Mercedes</option>
-		  <option value="audi">Audi</option>
-		</select>
-	</div>
+  	<span class="current">
+      <%= form.text_field :location, :placeholder => "Where?", :id => 'location-text' %>
+    </span>
+  	<div class="droplocation hide">
+      <%= form.select :city_id, City.to_options %>
+  	</div>
 	</div>
 	<a href="#" id="showdropdown">Change</a>
   </div>
@@ -31,7 +27,7 @@
 </div>
 
 <div class="seegoal padded bordered">
-  <%= link_to "<em></em> Activities near you".html_safe, goals_path, :class => "btn black arrow" %>
+  <%= link_to "<em></em> Activities near you".html_safe, goals_path, :id => "view-activities", :class => "btn black arrow" %>
 </div>
 
 <div class="login padded bordered acenter">
@@ -42,6 +38,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
     initialize();
+
+    $("#view-activities").click(function() {
+      
+    });
   });
 
   var geocoder;
@@ -85,6 +85,7 @@
         }
         //city data
         $("#location-text").val(city.short_name);
+        $("#view-activities").attr("href", "<%= goals_path %>" + "?city=" + encodeURIComponent(city.short_name));
 
         } else {
           console.log("No results found");

@@ -18,6 +18,7 @@ gem 'thin'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'chronic'
+gem 'geocoder'
 
 group :production do
   gem 'pg'

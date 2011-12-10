@@ -40,6 +40,7 @@ describe Goal do
       it "should parse date string" do
         goal = Factory(:goal, :title => "Let's have dinner on this Monday")
         goal.date.should_not be_nil
+        puts goal.reload.title
       end
     end
 

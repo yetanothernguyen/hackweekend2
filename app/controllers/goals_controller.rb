@@ -16,4 +16,10 @@ class GoalsController < InheritedResources::Base
     Membership.create :user_id => current_user, :goal_id => params[:id], :status => "pending"
     redirect_to goal_path(params[:id])
   end
+
+  def index
+    @current_city = params[:city]
+    @goals = Goal.current
+    @goals.sort! { |a,b| a.distance(@current_city) <=> b.distance(@current_city) }
+  end
 end

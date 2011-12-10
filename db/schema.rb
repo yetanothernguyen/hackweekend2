@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20111210211813) do
     t.integer  "user_id"
     t.string   "location"
     t.date     "date"
+    t.integer  "city_id"
   end
 
   create_table "memberships", :force => true do |t|
