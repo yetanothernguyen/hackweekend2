@@ -1,0 +1,14 @@
+<h2>Create your goal</h2>
+<%= form_for resource do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
