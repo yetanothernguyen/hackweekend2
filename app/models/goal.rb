@@ -1,4 +1,6 @@
 class Goal < ActiveRecord::Base
+  include TokenFinder
+  
   belongs_to :user
   has_many :memberships
   has_many :members, :source => :user, :through => :memberships
