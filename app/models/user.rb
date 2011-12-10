@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
-  has_many :authentications
+  has_many :authentications, :dependent => :delete_all do
+		def facebook
+			where(:provider => 'facebook').first
+		end
+	end
   has_many :goals
   has_many :memberships
 

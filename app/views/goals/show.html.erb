@@ -3,13 +3,10 @@
   <%= resource.title %>
 </p>
 <ul class="members">
-	<li><%= link_to (image_tag "xxx", :class => "avatar" ), "xx" %></li>
-	<li><%= link_to (image_tag "xxx", :class => "avatar" ), "xx" %></li>
-	<li><%= link_to (image_tag "xxx", :class => "avatar" ), "xx" %></li>
-	<li><%= link_to (image_tag "xxx", :class => "avatar" ), "xx" %></li>
-	<li><%= link_to (image_tag "xxx", :class => "avatar" ), "xx" %></li>
-	<li><%= link_to (image_tag "xxx", :class => "avatar" ), "xx" %></li>
-	<li><%= link_to (image_tag "xxx", :class => "avatar" ), "xx" %></li>
+  <% resource.members.each do |user| %>
+    <li><%= link_to user_fb_picture(user, 'square', :class => 'avatar'), user %></li>
+  <% end %>
+</ul>
 
 </ul>
 </div>
