@@ -38,7 +38,10 @@
 
 <div id="wrapper">
 	<div id="topbar">
-		<a href="/">grupi.co</a>
+		<h1><a href="/">Grupico</a></h1>
+    <% if controller.controller_name == "goals" && controller.action_name == "show" %>
+      <a href="#" id="addstatuslink"><%= image_tag('addpost.png') %></a>
+    <% end %>
 	</div>
 
 	<div class="container">

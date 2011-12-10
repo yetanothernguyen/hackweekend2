@@ -2,15 +2,23 @@
 
 .goaltop{
 	background:#51D8EB;
-	padding:20px;
 	.title{
 		font-family: museo;
 		font-size: 17px;
 		font-style: normal;
 		font-weight: 300;
-		margin: 0 0 10px;
+		margin: 0;
+		overflow:hidden;
+		padding:15px 20px;
+		background:#45BDCF;
+		a img{
+			float:left;
+			margin:0 10px 0 0;
+		}
 	}
 	.members{
+			padding:10px 20px;
+
 		li{
 			display:inline-table;
 			margin:0 4px 0 0;
@@ -55,4 +63,16 @@
 		width:270px;
 
 	}
+}
+#addstatuslink{
+    background: none repeat scroll 0 0 #333;
+    float: right;
+    padding: 6px 6px 4px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 21px;
+    cursor:pointer;
+    @include rounded(3px);
+    @include gradient(#444,#222);
 }
