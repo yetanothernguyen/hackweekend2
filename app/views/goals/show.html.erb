@@ -2,7 +2,7 @@
 <p class="title">
   <%= resource.title %>
 </p>
-<%= link_to "Join", join_goal_path(resource) if current_user.joined? %>
+<%= link_to "Join", join_goal_path(resource) unless current_user.joined?(resource) %>
 <ul class="members">
   <% resource.members.each do |user| %>
     <li><%= link_to user_fb_picture(user, 'square', :class => 'avatar'), user %></li>
