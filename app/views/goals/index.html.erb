@@ -1,7 +1,18 @@
+<h3>Recent Goals</h3>
 <ul class="tableview">
-<% collection.each do |goal| %>
+<% collection.recent.each do |goal| %>
   <li>
-    <%= goal.title %>
+    <%= link_to goal.title, goal_path(goal) %>
   </li>
 <% end %>
 </ul>
+<% if current_user %>
+  <h3>Your Goals</h3>
+  <ul class="tableview">
+  <% user.goals.recent.each do |goal| %>
+    <li>
+      <%= link_to goal.title, goal_path(goal) %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
