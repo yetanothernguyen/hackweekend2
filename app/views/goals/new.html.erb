@@ -1,21 +1,16 @@
 <%= render :partial => "landing" %>
+
 <div class="newgoal padded">
   <%= form_for resource do |form| %>
     <p>
       <%= form.text_area :title, :placeholder => "What do you want to do?" %>
     </p>
     <p>
-      <%= form.text_field :location, :placeholder => "Where?", :id => 'location-text' %>
-    </p>
-    <p>
-      <%= form.text_field :date, :placeholder => "When" %>
-    </p>
-      <%= form.submit "Do it", :class => "btn" %>
-    </p>
-  <% end %>
+
   <div class="location">
   	<div class="locationwrap">
-  	<span class="current">@ Petaling Jaya</span>
+  	<span class="current"><%= form.text_field :location, :placeholder => "Where?", :id => 'location-text' %>
+</span>
 	<div class="droplocation hide">
 		<select>
 		  <option value="volvo">Volvo</option>
@@ -27,18 +22,24 @@
 	</div>
 	<a href="#" id="showdropdown">Change</a>
   </div>
+
+    </p>
+      <%= form.submit "Do it", :class => "btn" %>
+    </p>
+  <% end %>
+
 </div>
 
 <div class="seegoal padded bordered">
   <a href="#" class="btn black arrow"> <em></em> Activities near you</a>
 </div>
 
-<div class="login padded bordered">
-  <a href="#" class="">Already have an account?</a>
+<div class="login padded bordered acenter">
+  <a href="#" id="facebook-login" class="">Already have an account?</a>
 </div>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
-<script type="text/javascript"> 
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
   $(document).ready(function() {
     initialize();
 
@@ -49,7 +50,7 @@
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-  } 
+  }
   //Get latitude and longitude;
   function successFunction(position) {
       var lat = position.coords.latitude;
@@ -58,7 +59,7 @@
   }
 
   function errorFunction(message) {
-    
+
   }
 
   function initialize() {
@@ -98,4 +99,4 @@
       }
     });
   }
-</script> 
+</script>

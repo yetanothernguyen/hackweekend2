@@ -1,3 +1,4 @@
+<% if false %>
 <h3>Recent Goals</h3>
 <ul class="tableview">
 <% collection.recent.each do |goal| %>
@@ -6,10 +7,18 @@
   </li>
 <% end %>
 </ul>
-<% if current_user %>
-  <h3>Your Goals</h3>
+<% end %>
+
+
+
+
+<% if logged_in? %>
+  <div class="usertop">
+    <%= link_to user_fb_picture(current_user, 'square', :class => 'avatar'), current_user %>
+    <%= current_user.name %>
+   </div>
   <ul class="tableview">
-  <% user.goals.recent.each do |goal| %>
+  <% current_user.goals.recent.each do |goal| %>
     <li>
       <%= link_to goal.title, goal_path(goal) %>
     </li>

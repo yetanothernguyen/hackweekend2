@@ -2,11 +2,11 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
- 	$("#landing").fadeOut(2000);
+ 	$("#landing").delay(800).fadeOut(1000);
 
  	$("#showdropdown").click(function(e){
  		e.preventDefault();
- 		$(".droplocation").removeClass("hide");
- 		$("span.current").hide();
+ 		$(".droplocation").toggleClass("hide");
+ 		$("span.current").toggle();
  	});
 });
