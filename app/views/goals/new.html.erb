@@ -1,16 +1,16 @@
 <div class="newgoal padded">
   <%= form_for resource do |form| %>
     <p>
-      <%= form.text_area :title, :placeholder => "What's your goal?" %>
+      <%= form.text_area :title, :placeholder => "What do you plan to do?" %>
     </p>
-      <%= form.submit "Set goal", :class => "btn" %>
+      <%= form.submit "Do   it", :class => "btn" %>
     </p>
   <% end %>
 </div>
 
 
 <div class="seegoal padded bordered">
-  <a href="#" class="btn black arrow"> <em></em>Goals near you </a>
+  <a href="#" class="btn black arrow"> <em></em> Near you </a>
 </div>
 
 <div class="login padded bordered">
