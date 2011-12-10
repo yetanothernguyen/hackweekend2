@@ -1,0 +1,9 @@
+<ul>
+<% @memberships.each do |membership| %>
+  <li>
+    <%= membership.user.username %>
+    <%= link_to "Accept", approve_goal_membership_path(membership.goal_id, membership.id) %>
+    <%= link_to "Reject", reject_goal_membership_path(membership.goal_id, membership.id) %>
+  </li>
+<% end %>
+</ul>

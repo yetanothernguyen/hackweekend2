@@ -3,7 +3,7 @@ class Goal < ActiveRecord::Base
   
   belongs_to :user
   has_many :memberships
-  has_many :members, :source => :user, :through => :memberships
+  has_many :members, :source => :user, :through => :memberships, :conditions => "status = 'approved'"
   has_many :posts
   
   scope :recent, order("created_at DESC")

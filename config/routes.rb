@@ -1,4 +1,5 @@
 ProjectJ::Application.routes.draw do
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -62,6 +63,12 @@ ProjectJ::Application.routes.draw do
   resources :goals, :path => 'activities' do
     member do
       get 'join'
+    end
+    resources :memberships, :only => [:index] do
+      member do
+        get 'approve'
+        get 'reject'
+      end
     end
   end
   resources :invites, :only => [:new, :show]

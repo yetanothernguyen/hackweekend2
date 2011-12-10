@@ -1,17 +1,17 @@
 <div class="goaltop">
-	<p class="title">
-	  <%= link_to user_fb_picture(resource.user, 'square', :class => 'avatar'), user_path(resource.user) %>
-	  <%= resource.title %>
-	</p>
-
-	<%= link_to "Join", join_goal_path(resource) unless current_user.joined?(resource) %>
-
-	<ul class="members">
-	  <% resource.members.each do |user| %>
-	    <li><%= link_to user_fb_picture(user, 'square', :class => 'avatar'), user_path(user) %></li>
-	  <% end %>
-	</ul>
-
+<p class="title">
+  <%= resource.title %>
+  <%= link_to user_fb_picture(resource.user, 'square', :class => 'avatar'), user_path(resource.user) %>
+</p>
+<%= link_to "Join", join_goal_path(resource) unless current_user.joined?(resource) %>
+<ul class="members">
+  <% resource.members.each do |user| %>
+    <li><%= link_to user_fb_picture(user, 'square', :class => 'avatar'), user_path(user) %></li>
+  <% end %>
+</ul>
+<p>
+  <%= link_to "Manage membership", goal_memberships_path(resource) %>
+</p>
 
 </div>
 
