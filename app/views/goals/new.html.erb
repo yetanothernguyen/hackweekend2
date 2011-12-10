@@ -31,7 +31,7 @@
 </div>
 
 <div class="seegoal padded bordered">
-  <a href="#" class="btn black arrow"> <em></em> Activities near you</a>
+  <%= link_to "<em></em> Activities near you".html_safe, goals_path, :class => "btn black arrow" %>
 </div>
 
 <div class="login padded bordered acenter">
@@ -42,8 +42,6 @@
 <script type="text/javascript">
   $(document).ready(function() {
     initialize();
-
-    var current_city = getCurrentCity();
   });
 
   var geocoder;
@@ -70,7 +68,6 @@
     var latlng = new google.maps.LatLng(lat, lng);
     geocoder.geocode({'latLng': latlng}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-      console.log(results)
         if (results[1]) {
          //formatted address
          //alert(results[0].formatted_address)
