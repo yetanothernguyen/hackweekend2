@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     respond_with do |format|
       format.html { redirect_to @goal }
       format.json { render :json => {} }
+      format.js
     end
   end
 end

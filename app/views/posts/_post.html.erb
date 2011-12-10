@@ -1,0 +1,7 @@
+<li>
+  <%= link_to user_fb_picture(post.user, 'square', :class => 'avatar'), post.user, :class => "fleft" %>
+  <div class="conversation">
+    <p><strong><%= post.user.username %></strong></p>
+    <p><%= post.content %></p>
+  </div>
+</li>
