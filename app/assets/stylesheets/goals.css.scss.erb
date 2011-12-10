@@ -5,8 +5,27 @@
 	margin:30px auto;
 	height:480px;
 	background:#F3F3F3;
+	position:relative;
 	@include rounded(4px);
 	@include box-shadow(0,3px,6px,#111);
+ }
+
+
+
+
+
+
+ #landing{
+ 	height:480px;
+ 	background:#000;
+ 	position:absolute;
+ 	width:320px;
+ 	z-index:8;
+ 	top:0;
+ 	opacity:1;
+ 	&.goup{
+
+ 	}
  }
 
 .container{
@@ -29,12 +48,22 @@
 	}
 }
 
-
+.locationwrap{
+	float:left;
+	width:180px;
+	text-align:right;
+	margin:0 10px 0 0;
+}
+a#showdropdown{
+	float:left;
+}
 
 
 .newgoal{
 	text-align:center;
 	position:relative;
+	overflow:hidden;
+	height:222px;
 	textarea{
 		height:100px;
 		width:260px;
@@ -52,7 +81,7 @@
 		border-bottom: 10px solid #51D8EB;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
-		bottom: 80px;
+		bottom: 100px;
 		content: "";
 		left: 50%;
 		margin-left: -5px;

@@ -1,3 +1,4 @@
+<%= render :partial => "landing" %>
 <div class="newgoal padded">
   <%= form_for resource do |form| %>
     <p>
@@ -6,8 +7,21 @@
       <%= form.submit "Do it", :class => "btn" %>
     </p>
   <% end %>
+  <div class="location">
+  	<div class="locationwrap">
+  	<span class="current">@ Petaling Jaya</span>
+	<div class="droplocation hide">
+		<select>
+		  <option value="volvo">Volvo</option>
+		  <option value="saab">Saab</option>
+		  <option value="mercedes">Mercedes</option>
+		  <option value="audi">Audi</option>
+		</select>
+	</div>
+	</div>
+	<a href="#" id="showdropdown">Change</a>
+  </div>
 </div>
-
 
 <div class="seegoal padded bordered">
   <a href="#" class="btn black arrow"> <em></em> Activities near you</a>
