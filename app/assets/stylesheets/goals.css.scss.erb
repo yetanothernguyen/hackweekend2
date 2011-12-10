@@ -33,7 +33,7 @@
 	position:relative;
 	textarea{
 		height:100px;
-		width:270px;
+		width:260px;
 		margin:0 auto;
 		border:1px solid #aaa;
 		@include rounded(3px);
@@ -75,3 +75,17 @@
 
 
  }
+
+
+
+ 	p{
+ 		margin:0 0 0 20px;
+ 		padding:10px 0 10px 35px;
+ 		&.addinvite{
+ 			background:url(<%= asset_path('addinvite.png') %>) no-repeat center left;
+ 		}
+ 		&.created{
+ 			background:url(<%= asset_path('created.png') %>) no-repeat center left;
+ 		}
+ 	}
+
