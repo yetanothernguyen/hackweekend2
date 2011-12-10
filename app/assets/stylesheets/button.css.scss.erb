@@ -3,7 +3,7 @@
 	.btn{
 		border:0;
 		background-color:#51D8EB;
-		@include rounded(3px);
+		@include rounded(4px);
 		padding:12px 10px;
 		width:280px;
 		margin:10px auto;
@@ -11,6 +11,8 @@
 		font-family:bebas;
 		color:000;
 		text-decoration:none;
+		display:block;
+		-webkit-appearance:none;
 		&.black{
 			background:#333;
 			color:#fff;
@@ -21,4 +23,22 @@
 			background-position: 275px center;
 
 		}
+		span{
+			display:block;
+			text-indent:-9999px;
+			&.twitter{
+				background:url(<%= asset_path('twitter.png') %>) no-repeat;
+				height:28px;
+				width:140px;
+			}
+			&.facebook{
+				background:url(<%= asset_path('facebook.png') %>) no-repeat;
+				height:28px;
+				width:140px;
+			}
+		}
+	}
+
+	input[type="submit"].btn{
+		width:300px;
 	}

@@ -1,10 +1,13 @@
 @import "mixin";
 
 #wrapper{
-	width:100%;
-	margin:0 auto;
-	min-width:320px;
-}
+	width:320px;
+	margin:30px auto;
+	height:480px;
+	background:#F3F3F3;
+	@include rounded(4px);
+	@include box-shadow(0,3px,6px,#111);
+ }
 
 
 #topbar{
@@ -15,6 +18,11 @@
 	font-size:20px;
 	text-decoration:uppercase;
 	color:#fff;
+	@include rounded(3px 3px 0 0);
+	a{
+		color:#fff;
+		text-decoration:none;
+	}
 }
 
 
@@ -25,14 +33,15 @@
 	position:relative;
 	textarea{
 		height:100px;
-		width:95%;
+		width:270px;
 		margin:0 auto;
-		border:1px solid #ccc;
+		border:1px solid #aaa;
 		@include rounded(3px);
 		text-align:left;
 		font-size:20px;
 		padding:15px;
 		font-family:Helvetica;
+		@include box-shadow-inset(0,2px,2px,rgba(0,0,0,0.20));
 	}
 
 	&:before{
