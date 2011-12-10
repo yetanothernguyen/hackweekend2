@@ -9,4 +9,14 @@ $(document).ready(function() {
  		$(".droplocation").toggleClass("hide");
  		$("span.current").toggle();
  	});
+
+	$("#addstatuslink").click(function(e){
+		e.preventDefault();
+		$(".addstatus").animate({
+			top:'100px'
+		});
+
+	});
+
+
 });

@@ -29,3 +29,30 @@
 		margin: 0 0 0 10px;
 	}
 }
+
+.addstatus{
+	width:270px;
+	height:132px;
+	background:#fff;
+	overflow:hidden;
+	position:absolute;
+	top:-160px;
+	left:15px;
+	padding:10px;
+	@include rounded(4px);
+	@include box-shadow(0,2px,20px,rgba(0,0,0,0.6));
+	textarea{
+		width:258px;
+		height:60px;
+		@include rounded(3px);
+		border:1px solid #aaa;
+		@include box-shadow-inset(0,1px,1px,rgba(0,0,0,0.20));
+		padding: 5px;
+		font-family:Helvetica;
+
+	}
+	input.btn[type="submit"] {
+		width:270px;
+
+	}
+}

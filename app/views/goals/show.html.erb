@@ -11,16 +11,19 @@
 </ul>
 
 </ul>
+<a id="addstatuslink">Post </a>
 </div>
 
-<div class="interaction">
+<div class="addstatus">
 	<%= form_for @post, :html => { :"data-remote" => true } do |form| %>
 	 	<%= form.hidden_field :user_id, :value => current_user.id %>
 	 	<%= form.hidden_field :goal_id, :value => resource.id %>
 		<%= form.text_area :content, :size => "40x2" %>
-		<%= form.submit "Post" %>
+		<%= form.submit "Post", :class=> "btn black" %>
 	<% end %>
-	
+</div>
+
+<div class="interaction">
 	<ul class="tableview" id="posts-list">
 		<% @posts.each do |post| %>
 			<li>
