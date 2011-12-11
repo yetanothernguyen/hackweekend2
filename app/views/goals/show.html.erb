@@ -26,7 +26,7 @@
 </div>
 
 <div class="interaction">
-	<ul class="tableview" id="posts-list">
+	<ul class="<%= @posts.empty? ? '' : 'tableview' %>" id="posts-list">
 		<% @posts.each do |post| %>
 			<li>
 			<%= link_to user_fb_picture(post.user, 'square', :class => 'avatar'), post.user, :class => "fleft" %>
