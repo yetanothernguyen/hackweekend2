@@ -32,7 +32,11 @@
 </div>
 
 <div class="login padded bordered acenter">
+<% if !logged_in? %>
   <a href="#" id="facebook-login" class="">Already have an account?</a>
+<% else %>
+  Hello, <%= current_user.name %>! (<%= link_to "Logout", "/signout" %> )
+<% end %>
 </div>
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -41,7 +45,7 @@
     initialize();
 
     $("#view-activities").click(function() {
-      
+
     });
   });
 
