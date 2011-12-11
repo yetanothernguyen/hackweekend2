@@ -1,7 +1,8 @@
 <div class="goaltop">
 <p class="title">
-  <%= resource.title %>
-  <%= link_to user_fb_picture(resource.user, 'square', :class => 'avatar'), user_path(resource.user) %>
+
+  <%= link_to user_fb_picture(resource.user, 'square', :class => 'avatar'), user_path(resource.user), :style => "margin-right:10px" %>
+    <%= resource.title %>
  	<span class="date"><%= resource.date.strftime("%d %b") %></span>
 </p>
 <ul class="members">

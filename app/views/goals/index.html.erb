@@ -6,7 +6,7 @@
      <div class="xtvt">
     <strong><%= link_to goal.title, goal_path(goal) %></strong>
     <%= goal.city.name %> &bull;
-    <%= goal.date.strftime("%d %b") %>
+    <%= goal.date.strftime("%d %b") %> <br />
     <%= link_to "I'm interested", join_goal_memberships_path(goal) unless current_user && (goal.user == current_user || current_user.joined?(goal)) %>
     </div>
   </li>
