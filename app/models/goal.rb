@@ -41,6 +41,7 @@ class Goal < ActiveRecord::Base
     str.slice!(" on ")
     str.slice!(" in ")
     self.date = Chronic.parse(str)
+    self.date = Time.now.to_date if self.date.nil?
   end
 
 end
