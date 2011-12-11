@@ -1,9 +1,11 @@
-<%= resource.name %>
+<div style="padding:20px 20px 30px">
+<%= link_to user_fb_picture(resource, 'square', :class => 'avatar'), user_path(resource) , :style=>"float:left;margin:0 10px 0 0;" %>
 
-<%= link_to user_fb_picture(resource, 'square', :class => 'avatar'), user_path(resource) %>
+<p style="margin:10px 0 0; font-size:15px;"><strong><%= resource.name %></strong></p>
 
+</div>
 <ul class="tableview">
-<li class="smallhead"><%= "#{resource.username}'s Goals"%></li>
+<li class="smallhead"><%= "#{resource.username}'s Activities"%></li>
 <% resource.goals.recent.each do |goal| %>
   <li>
     <%= link_to goal.title, goal_path(goal) %>
