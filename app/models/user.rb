@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
   end
   
   def joined?(goal)
-    goal.memberships.include?(self)
+    goal.members.include?(self)
   end
 end

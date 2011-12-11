@@ -9,11 +9,7 @@ $(document).ready(function() {
        message: 'Do things with people near you',
        name: 'Grupi.co',
        caption: titleShare,
-       description: (
-          titleShare
-       ),
        link: inviteLink,
-       picture: 'http://www.fbrell.com/f8.jpg',
        user_message_prompt: titleShare
       },
       function(response) {
