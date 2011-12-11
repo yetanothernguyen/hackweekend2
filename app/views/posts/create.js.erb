@@ -1,4 +1,8 @@
 var post = '<%= escape_javascript(render(@post)) %>';
 $("#posts-list").prepend(post)
-$(".addstatus").fadeOut();
-$("#posts-list li:first-child").hide().delay(500).slideDown(500);
+$(".addstatus").animate({
+			top:'-160px'
+});
+
+$("#post_content").val("");
+$("#posts-list li:first-ch0ild").hide().delay(500).slideDown(500);
