@@ -1,8 +1,9 @@
 var post = '<%= escape_javascript(render(@post)) %>';
-$("#posts-list").prepend(post)
 $(".addstatus").animate({
 			top:'-160px'
+}, function(){
+  $(this).hide();
 });
+$("#posts-list").prepend(post).find("li:first-child").hide().slideDown(500);
 
 $("#post_content").val("");
-$("#posts-list li:first-ch0ild").hide().delay(500).slideDown(500);

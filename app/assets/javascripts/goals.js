@@ -9,14 +9,22 @@ $(document).ready(function() {
  		$(".droplocation").toggleClass("hide");
  		$("span.current").toggle();
  	});
+ 	
+ 	$(".addstatus").hide();
 
 	$("#addstatuslink").click(function(e){
-		e.preventDefault();
-		$(".addstatus").animate({
-			top:'100px'
-		});
-
+	  e.preventDefault();
+	  if ($(".addstatus:visible").length) {
+      $(".addstatus").animate({
+  			top:'-160px'
+  		}, function(){
+  		  $(this).hide();
+  		});
+	  } else {
+	    $(".addstatus").show().animate({
+  			top:'100px'
+  		});
+	  }
 	});
-
 
 });
