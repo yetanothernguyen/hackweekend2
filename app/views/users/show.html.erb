@@ -1,8 +1,9 @@
 <%= resource.name %>
-<%= resource.username %>
 
-<h3><%= "#{resource.username}'s Goals"%></h3>
-<ul>
+<%= link_to user_fb_picture(resource, 'square', :class => 'avatar'), user_path(resource) %>
+
+<ul class="tableview">
+<li class="smallhead"><%= "#{resource.username}'s Goals"%></li>
 <% resource.goals.recent.each do |goal| %>
   <li>
     <%= link_to goal.title, goal_path(goal) %>
