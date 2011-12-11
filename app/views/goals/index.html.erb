@@ -5,8 +5,8 @@
    <%= link_to user_fb_picture(goal.user, 'square', :class => 'avatar'), goal.user , :class=>"fleft" %>
      <div class="xtvt">
     <strong><%= link_to goal.title, goal_path(goal) %></strong>
-    <%= goal.city.name %>
-    <%= goal.date.strftime("%m/%y") %>
+    <%= goal.city.name %> &bull;
+    <%= goal.date.strftime("%d %b") %>
     <%= link_to "I'm interested", join_goal_memberships_path(goal) unless current_user && (goal.user == current_user || current_user.joined?(goal)) %>
     </div>
   </li>

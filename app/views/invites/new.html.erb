@@ -10,6 +10,8 @@
 	<a href="#" class="btn black arrow" id="<%= current_user ? 'facebook-share' : 'facebook-login' %>" ><span class='facebook'>Post to Facebook</span></a>
 </div>
 
+<%= link_to "Done", goal_path(@goal) , :class => "btn black arrow" %>
+
 <script type="text/javascript">
   var inviteLink = "<%= invite_url(:id => @goal.token) %>";
   var titleShare = "<%= @goal.title %>";
