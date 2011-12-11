@@ -8,13 +8,13 @@ $(document).ready(function() {
        method: 'feed',
        message: 'Do things with people near you',
        name: 'Grupi.co',
-       caption: 'Do things with people near you',
+       caption: titleShare,
        description: (
-          'Do things with people near you'
+          titleShare
        ),
        link: inviteLink,
        picture: 'http://www.fbrell.com/f8.jpg',
-       user_message_prompt: 'Invite your friends to do things'
+       user_message_prompt: titleShare
       },
       function(response) {
         if (response && response.post_id) {
