@@ -12,11 +12,8 @@ $(document).ready(function() {
        description: (
           'Do things with people near you'
        ),
-       link: 'http://www.fbrell.com/',
+       link: inviteLink,
        picture: 'http://www.fbrell.com/f8.jpg',
-       actions: [
-            { name: 'fbrell', link: 'http://www.fbrell.com/' }
-       ],
        user_message_prompt: 'Invite your friends to do things'
       },
       function(response) {
