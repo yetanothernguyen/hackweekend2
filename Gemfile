@@ -19,6 +19,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'chronic'
 gem 'geocoder'
+gem 'rails_config'
 
 group :production do
   gem 'pg'
