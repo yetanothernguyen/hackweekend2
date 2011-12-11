@@ -1,6 +1,8 @@
 <div class="goalsinfo padded">
 	<p class="created">You've created this activity!</p>
-	<h3><%= @goal.title %></h3>
+	<h3><%= @goal.title %>
+	<span class="date"><%= @goal.date.strftime("%d %b") %></span></h3>
+
 </div>
 
 
