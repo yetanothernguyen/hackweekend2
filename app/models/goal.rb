@@ -15,8 +15,7 @@ class Goal < ActiveRecord::Base
 
   scope :recent, order("created_at DESC")
   scope :current, where(["date >= ?", Time.now])
-
-  default_scope where("user_id IS NOT NULL")
+  scope :valid, where("user_id IS NOT NULL")
 
   def distance(city_name)
     to_city = City.find_by_name(city_name)

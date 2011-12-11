@@ -14,7 +14,7 @@ class GoalsController < InheritedResources::Base
 
   def index
     @current_city = params[:city]
-    @goals = Goal.current
+    @goals = Goal.valid.current
     @goals.sort! { |a,b| a.distance(@current_city) <=> b.distance(@current_city) }
   end
 end
