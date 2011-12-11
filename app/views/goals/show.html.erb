@@ -10,8 +10,6 @@
 </ul>
 <p class="request">
   <%= link_to "#{resource.memberships.pending.size}", goal_memberships_path(resource) unless resource.memberships.pending.blank? %>
-  <%= link_to "Join", join_goal_path(resource) unless current_user.joined?(resource) %>
-
 </p>
 
 </div>
