@@ -11,7 +11,7 @@
   <div class="location">
   	<div class="locationwrap">
   	<span class="current">
-      <%= form.text_field :location, :placeholder => "Where?", :id => 'location-text' %>
+      <%= form.text_field :location, :placeholder => "Where?", :id => 'location-text', :readonly => "readonly" %>
     </span>
   	<div class="droplocation hide">
       <%= form.select :city_id, City.to_options %>
